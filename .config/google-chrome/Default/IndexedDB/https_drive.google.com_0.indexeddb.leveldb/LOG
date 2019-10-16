@@ -1,0 +1,36 @@
+2019/10/16-10:04:30.606 24f4 Reusing MANIFEST /home/csmajs/ssing072/.config/google-chrome/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2019/10/16-10:05:54.782 2596 Level-0 table #5: started
+2019/10/16-10:05:54.801 2596 Level-0 table #5: 13186637 bytes OK
+2019/10/16-10:05:54.802 2596 Delete type=0 #3
+2019/10/16-10:05:56.315 2596 Level-0 table #7: started
+2019/10/16-10:05:56.337 2596 Level-0 table #7: 12926234 bytes OK
+2019/10/16-10:05:56.338 2596 Delete type=0 #4
+2019/10/16-10:05:56.339 2596 Compacting 1@1 + 1@2 files
+2019/10/16-10:05:56.376 2596 Generated table #8@1: 57 keys, 12964854 bytes
+2019/10/16-10:05:56.378 2596 Generated table #9@1: 8 keys, 2808 bytes
+2019/10/16-10:05:56.378 2596 Compacted 1@1 + 1@2 files => 12967662 bytes
+2019/10/16-10:05:56.378 2596 compacted to: files[ 0 0 2 0 0 0 0 ]
+2019/10/16-10:05:56.378 2596 Delete type=2 #7
+2019/10/16-10:05:56.378 2596 Delete type=2 #5
+2019/10/16-10:05:58.185 2596 Level-0 table #11: started
+2019/10/16-10:05:58.204 2596 Level-0 table #11: 12967521 bytes OK
+2019/10/16-10:05:58.205 2596 Delete type=0 #6
+2019/10/16-10:05:58.207 2596 Compacting 1@1 + 2@2 files
+2019/10/16-10:05:58.237 2596 Generated table #12@1: 57 keys, 12965899 bytes
+2019/10/16-10:05:58.238 2596 Generated table #13@1: 8 keys, 2808 bytes
+2019/10/16-10:05:58.238 2596 Compacted 1@1 + 2@2 files => 12968707 bytes
+2019/10/16-10:05:58.238 2596 compacted to: files[ 0 0 2 0 0 0 0 ]
+2019/10/16-10:05:58.238 2596 Delete type=2 #11
+2019/10/16-10:05:58.238 2596 Delete type=2 #9
+2019/10/16-10:05:58.238 2596 Delete type=2 #8
+2019/10/16-10:05:59.096 2596 Level-0 table #15: started
+2019/10/16-10:05:59.129 2596 Level-0 table #15: 12927196 bytes OK
+2019/10/16-10:05:59.131 2596 Delete type=0 #10
+2019/10/16-10:05:59.133 2596 Compacting 1@1 + 2@2 files
+2019/10/16-10:05:59.180 2596 Generated table #16@1: 57 keys, 12965899 bytes
+2019/10/16-10:05:59.182 2596 Generated table #17@1: 8 keys, 2808 bytes
+2019/10/16-10:05:59.182 2596 Compacted 1@1 + 2@2 files => 12968707 bytes
+2019/10/16-10:05:59.182 2596 compacted to: files[ 0 0 2 0 0 0 0 ]
+2019/10/16-10:05:59.182 2596 Delete type=2 #15
+2019/10/16-10:05:59.182 2596 Delete type=2 #13
+2019/10/16-10:05:59.182 2596 Delete type=2 #12
