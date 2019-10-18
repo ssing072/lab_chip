@@ -30,9 +30,11 @@ echo Running all tests..."\n\n
 
 test "PINA: 0x01 => PORTC: 8, state = WAITRELEASE"
 set state = INIT
-setPINA 0xFE
+setPINA 0x01
 continue 2
-expectPORTC 7
+setPINA 0x00
+continue 2
+expectPORTC 8
 expect state WAITRELEASE
 checkResult
 
