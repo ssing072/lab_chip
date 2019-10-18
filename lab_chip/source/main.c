@@ -12,13 +12,13 @@ int main(void) {
 	state = INIT;
 	unsigned char tempOut = 0x00;
 	tempOut = 7;
-	unsigned char A0 = 0x01;
-	unsigned char A1 = 0x02;
+	unsigned char A0 = 0x00;
+	unsigned char A1 = 0x00
 	
 	/* Insert your solution below */
 	while (1) {
-		A0 = ~PINA & 0x01;
-		A1 = ~PINA & 0x02;
+		A0 = PINA & 0x01;
+		A1 = PINA & 0x02;
 		switch(state){
 			case INIT:
 			state = WAIT;
