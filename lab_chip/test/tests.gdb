@@ -48,93 +48,83 @@ expectPORTC 2
 expect state RELEASE
 checkResult
 
-test "PINA: 0x01, 0x00 => PORTC: 0x02, state = WAIT"
+test "PINA: 0x01, 0x00 => PORTC: 0x04, state = WAIT"
 set state = INIT
 setPINA 0x01
 continue 2
 setPINA 0x00
 continue 2
-expectPORTC 2
+expectPORTC 0x04
 expect state RELEASE
 checkResult
 
-test "PINA: 0x01, 0x00 => PORTC: 0x02, state = WAIT"
+test "PINA: 0x01, 0x00 => PORTC: 0x08, state = WAIT"
 set state = INIT
 setPINA 0x01
 continue 2
 setPINA 0x00
 continue 2
-expectPORTC 2
+expectPORTC 0x08
 expect state RELEASE
 checkResult
 
-test "PINA: 0x01, 0x00 => PORTC: 0x02, state = WAIT"
+test "PINA: 0x01, 0x00 => PORTC: 0x10, state = WAIT"
 set state = INIT
 setPINA 0x01
 continue 2
 setPINA 0x00
 continue 2
-expectPORTC 2
+expectPORTC 0x10
 expect state RELEASE
 checkResult
 
-test "PINA: 0x01, 0x00 => PORTC: 0x02, state = WAIT"
+test "PINA: 0x01, 0x00 => PORTC: 0x20, state = WAIT"
 set state = INIT
 setPINA 0x01
 continue 2
 setPINA 0x00
 continue 2
-expectPORTC 2
+expectPORTC 0x20
 expect state RELEASE
 checkResult
 
-test "PINA: 0x01, 0x00 => PORTC: 0x02, state = WAIT"
+test "PINA: 0x01, 0x00 => PORTC: 0x15, state = WAIT"
 set state = INIT
 setPINA 0x01
 continue 2
 setPINA 0x00
 continue 2
-expectPORTC 2
+expectPORTC 0x15
 expect state RELEASE
 checkResult
 
-test "PINA: 0x01, 0x00 => PORTC: 0x02, state = WAIT"
+test "PINA: 0x01, 0x00 => PORTC: 0x2A, state = WAIT"
 set state = INIT
 setPINA 0x01
 continue 2
 setPINA 0x00
 continue 2
-expectPORTC 2
+expectPORTC 0x2A
 expect state RELEASE
 checkResult
 
-test "PINA: 0x01, 0x00 => PORTC: 0x02, state = WAIT"
+test "PINA: 0x01, 0x00 => PORTC: 0x00, state = WAIT"
 set state = INIT
 setPINA 0x01
 continue 2
 setPINA 0x00
 continue 2
-expectPORTC 2
+expectPORTC 0x00
 expect state RELEASE
 checkResult
 
-test "PINA: 0x01, 0x00 => PORTC: 0x02, state = WAIT"
+test "PINA: 0x01, 0x00 => PORTC: 0x01, state = WAIT"
 set state = INIT
 setPINA 0x01
 continue 2
 setPINA 0x00
 continue 2
-expectPORTC 2
-expect state RELEASE
-checkResult
-
-test "PINA: 0x01, 0x00 => PORTC: 0x02, state = WAIT"
-set state = INIT
-setPINA 0x01
-continue 2
-setPINA 0x00
-continue 2
-expectPORTC 2
+expectPORTC 1
 expect state RELEASE
 checkResult
 
