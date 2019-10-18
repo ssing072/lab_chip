@@ -61,11 +61,10 @@ int main(void) {
 				}
 				break;
 			case RELEASE:
-				if(A1){
-					state = RELEASE;
-				}
-				else if(!A1){
+				if(!A1){
 					state = WAIT;
+				else{
+					state = RELEASE;
 				}
 			case LIGHT1:
 				state = RELEASE;
