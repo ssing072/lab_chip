@@ -34,6 +34,8 @@ setPINA 0x01
 continue 2
 setPINA 0x00
 continue 2
+setPINA 0x00
+continue 2
 expectPORTC 1
 expect state RELEASE
 checkResult
