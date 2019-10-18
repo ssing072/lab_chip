@@ -8,30 +8,97 @@ int main(void) {
 	DDRA = 0x00; PORTA = 0xFF;
 	DDRC = 0xFF; PORTC = 0x00;
 	
-	unsigned char tempA = 0x00;
-	unsigned char C = 0x00;
+	enum states {INIT, WAIT, INCREMENT, DECREMENT, RESET, WAITRELEASE, WAITRELEASE2} state;
+	state = INIT;
+	unsigned char tempOut = 0x00;
+	tempOut = 7;
+	unsigned char A0 = 0x01;
+	unsigned char A1 = 0x02;
 	
-	while(1){
-		tempA = PINA;
-		if(tempA == 0x01 || tempA == 0x02){
-			C = 0x60;
+	/* Insert your solution below */
+	while (1) {
+		A0 = ~PINA & 0x01;
+		A1 = ~PINA & 0x02;
+		switch(state){
+			case INIT:
+			state = WAIT;
+			break;
+			case WAIT:
+				if(A1 && A0){
+					state = RESET;
+				}
+				else if(A1){
+					state = WAITRELEASE2;
+				}
+				else if(A0){
+					state = WAITRELEASE;
+				}
+				else{
+					state = WAIT;
+				}
+			break;
+			case INCREMENT:
+				state = WAIT;
+				break;
+			case WAITRELEASE:
+				if(A1){
+					state = RESET;
+				}
+				else if (!A0) {
+					state = INCREMENT;
+				} 
+				else {
+					state = WAITRELEASE;
+				}
+				break;
+			case DECREMENT:
+				state = WAIT;
+				break;
+			case WAITRELEASE2:
+				if(A0){
+					state = RESET;
+				}
+				else if (!A1) {
+					state = DECREMENT;
+					} 
+				else {
+					state = WAITRELEASE2;
+				}
+			break;
+			case RESET:
+				if((!A0) && (!A1)){
+					state = WAIT;
+				}
+				else{
+					state = RESET;
+				}
+				break;
 		}
-		else if(tempA == 0x03 || tempA == 0x04){
-			C = 0x70;
+		switch(state){
+			case INIT:
+				tempOut = 7;
+				break;
+			case WAIT:
+				break;
+			case WAITRELEASE:
+				break;
+			case RESET:
+				tempOut = 0;
+				break;
+			case WAITRELEASE2:
+				break;
+			case INCREMENT:
+				if(tempOut < 9){
+					tempOut = tempOut + 1;
+				}
+				break;
+			case DECREMENT:
+				if(tempOut > 0){
+					tempOut = tempOut - 1;
+				}
+				break;
 		}
-		else if(tempA == 0x05 || tempA == 0x06){
-			C = 0x38;
-		}
-		else if(tempA == 0x07 || tempA == 0x08 || tempA == 0x09){
-			C = 0x3C;
-		}
-		else if(tempA == 0x0A || tempA == 0x0B || tempA == 0x0C){
-			C = 0x3E;
-		}
-		else if(tempA == 0x0D || tempA == 0x0E || tempA == 0x0F){
-			C = 0x3F;
-		}
-		PORTC = C;
+		PORTC = tempOut;
 	}
 	return 1;
-  }
+}
