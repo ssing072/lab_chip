@@ -67,6 +67,7 @@ int main(void) {
 				else{
 					state = RELEASE;
 				}
+				break;
 			case LIGHT1:
 				state = RELEASE;
 				break;
