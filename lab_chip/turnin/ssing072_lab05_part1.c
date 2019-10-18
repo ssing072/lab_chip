@@ -5,9 +5,6 @@
 
 int main(void) {
 	
-	
-	//PART 1
-	/*
 	DDRA = 0x00; PORTA = 0xFF;
 	DDRC = 0xFF; PORTC = 0x00;
 	
