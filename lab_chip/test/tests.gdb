@@ -57,23 +57,25 @@ expectPORTC 9
 expect state WAIT
 checkResult
 
-test "PINA: 0x02, 0x00 => PORTC: 7, state = WAIT"
+test "PINA: 0x02, 0x00 => PORTC: 8, state = WAIT"
 set state = INIT
 setPINA 0x02
 continue 2
 setPINA 0x00
 continue 2
-expectPORTC 6
+expectPORTC 8
 expect state WAIT
 checkResult
 
-test "PINA: 0x00, 0x00 => PORTC: 0, state = RESET"
+test "PINA: 0x01, 0x02, 0x00 => PORTC: 0, state = RESET"
 set state = INIT
-setPINA 0xFF
+setPINA 0x01
 continue 2
-setPINA 0xFF
+setPINA 0x02
 continue 2
-expectPORTC 7
+setPINA 0x00
+continue 2
+expectPORTC 0
 expect state WAIT
 checkResult
 
