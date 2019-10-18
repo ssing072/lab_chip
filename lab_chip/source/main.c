@@ -21,7 +21,6 @@ int main(void) {
 	enum states {INIT, WAIT, RELEASE, LIGHT1, LIGHT2, LIGHT3, LIGHT4, LIGHT5, LIGHT6, LIGHT135, LIGHT246} state;
 	state = INIT;
 	unsigned char C = 0x00;
-	tempOut = 7;
 	unsigned char A1 = 0x00;
 	
 	while (1) {
