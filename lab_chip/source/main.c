@@ -18,96 +18,114 @@ int main(void) {
 	DDRA = 0x00; PORTA = 0xFF;
 	DDRC = 0xFF; PORTC = 0x00;
 	
-	enum states {INIT, WAIT, INCREMENT, DECREMENT, RESET, WAITRELEASE, WAITRELEASE2} state;
+	enum states {INIT, WAIT, RELEASE, LIGHT1, LIGHT2, LIGHT3, LIGHT4, LIGHT5, LIGHT6, LIGHT135, LIGHT246} state;
 	state = INIT;
-	unsigned char tempOut = 0x00;
+	unsigned char C = 0x00;
 	tempOut = 7;
 	unsigned char A0 = 0x00;
-	unsigned char A1 = 0x00;
 	
 	while (1) {
 		A0 = PINA & 0x01;
-		A1 = PINA & 0x02;
 		switch(state){
 			case INIT:
-			state = WAIT;
-			break;
+				state = WAIT;
+				break;
 			case WAIT:
-				if(A1 && A0){
-					state = RESET;
+				if(A1 && (C == 0x00)){
+					state = LIGHT1;
 				}
-				else if(A1){
-					state = WAITRELEASE2;
+				else if(A1 && (C == 0x01)){
+					state = LIGHT2;
 				}
-				else if(A0){
-					state = WAITRELEASE;
+				else if(A1 && (C == 0x02)){
+					state = LIGHT3;
+				}
+				else if(A1 && (C == 0x04)){
+					state = LIGHT4;
+				}
+				else if(A1 && (C == 0x08)){
+					state = LIGHT5;
+				}
+				else if(A1 && (C == 0x10)){
+					state = LIGHT6;
+				}
+				else if(A1 && (C == 0x20)){
+					state = LIGHT135;
+				}
+				else if(A1 && (C == 0x15)){
+					state = LIGHT246;
+				}
+				else if(A1 && (C == 0x2A)){
+					state = INIT;
 				}
 				else{
 					state = WAIT;
 				}
-			break;
-			case INCREMENT:
-				state = WAIT;
 				break;
-			case WAITRELEASE:
-				if(A1){
-					state = RESET;
-				}
-				else if (!A0) {
-					state = INCREMENT;
-				} 
-				else {
-					state = WAITRELEASE;
-				}
+			case LIGHT1:
+				A1 ? LIGHT1 : WAIT	
 				break;
-			case DECREMENT:
-				state = WAIT;
+			case LIGHT2:
+				A1 ? LIGHT2 : WAIT
 				break;
-			case WAITRELEASE2:
-				if(A0){
-					state = RESET;
-				}
-				else if (!A1) {
-					state = DECREMENT;
-					} 
-				else {
-					state = WAITRELEASE2;
-				}
-			break;
-			case RESET:
-				if((!A0) && (!A1)){
-					state = WAIT;
-				}
-				else{
-					state = RESET;
-				}
+			case LIGHT3:
+				A1 ? LIGHT3 : WAIT
 				break;
+			case LIGHT4:
+				A1 ? LIGHT4 : WAIT
+				break;
+			case LIGHT5:
+				A1 ? LIGHT5 : WAIT
+				break;
+			case LIGHT6:
+				A1 ? LIGHT6 : WAIT
+				break;
+			case LIGHT135:
+				A1 ? LIGHT135 : WAIT
+				break;
+			case LIGHT246:
+				A1 ? LIGHT246 : WAIT
+				break;
+			
+				
+			
+			
+			
 		}
 		switch(state){
 			case INIT:
-				tempOut = 7;
+				C = 0x00;
 				break;
 			case WAIT:
 				break;
-			case WAITRELEASE:
+			case RELEASE:
 				break;
-			case RESET:
-				tempOut = 0;
+			case LIGHT1:
+				C = 0x01;
 				break;
-			case WAITRELEASE2:
+			case LIGHT2:
+				C = 0x02;
 				break;
-			case INCREMENT:
-				if(tempOut < 9){
-					tempOut = tempOut + 1;
-				}
+			case LIGHT3:
+				C = 0x04;
 				break;
-			case DECREMENT:
-				if(tempOut > 0){
-					tempOut = tempOut - 1;
-				}
+			case LIGHT4:
+				C = 0x08;
+				break;
+			case LIGHT5:
+				C = 0x10;
+				break;
+			case LIGHT6:
+				C = 0x20;
+				break;
+			case LIGHT135:
+				C = 0x15;
+				break;
+			case LIGHT246:
+				C = 0x2A;
 				break;
 		}
-		PORTC = tempOut;
+		PORTC = C;
 	}
 	return 1;
 }
