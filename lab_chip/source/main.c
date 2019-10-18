@@ -12,7 +12,7 @@ int main(void) {
 	unsigned char C = 0x00;
 	
 	while(1){
-		tempA = ~PINA;
+		tempA = PINA;
 		if(tempA == 0x01 || tempA == 0x02){
 			C = 0x60;
 		}
