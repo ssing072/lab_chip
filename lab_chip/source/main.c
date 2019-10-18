@@ -63,6 +63,7 @@ int main(void) {
 			case RELEASE:
 				if(!A1){
 					state = WAIT;
+				}
 				else{
 					state = RELEASE;
 				}
