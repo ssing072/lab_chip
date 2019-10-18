@@ -37,7 +37,7 @@ continue 2
 setPINA 0x00
 continue 2
 expectPORTC 1
-expect state RELEASE
+expect state WAIT
 checkResult
 
 test "PINA: 0x01, 0x00 => PORTC: 0x02, state = WAIT"
@@ -47,7 +47,7 @@ continue 2
 setPINA 0x00
 continue 2
 expectPORTC 2
-expect state RELEASE
+expect state WAIT
 checkResult
 
 test "PINA: 0x01, 0x00 => PORTC: 0x04, state = WAIT"
@@ -57,7 +57,7 @@ continue 2
 setPINA 0x00
 continue 2
 expectPORTC 0x04
-expect state RELEASE
+expect state WAIT
 checkResult
 
 test "PINA: 0x01, 0x00 => PORTC: 0x08, state = WAIT"
