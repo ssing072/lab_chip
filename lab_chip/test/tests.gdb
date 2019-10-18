@@ -33,7 +33,7 @@ set state = INIT
 setPINA 0xFE
 continue 2
 expectPORTC 7
-expect state WAIT
+expect state RESET
 checkResult
 
 
