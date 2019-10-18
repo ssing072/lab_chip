@@ -29,7 +29,7 @@ echo Running all tests..."\n\n
 # Add tests below
 
 test "PINA: 0x01 => PORTC: 8, state = WAIT1"
-set state = START
+set state = INIT
 setPINA 0xFE
 continue 2
 expectPORTC 7
@@ -38,7 +38,7 @@ checkResult
 
 
 test "PINA: 0x00 => PORTC: 0, state = RESET"
-set state = START
+set state = INIT
 setPINA 0xFF
 continue 2
 expectPORTC 7
@@ -46,7 +46,7 @@ expect state INIT
 checkResult
 
 test "PINA: 0x02 => PORTC: 0, state = DECREMENT"
-set state = START
+set state = INIT
 setPINA 0xFD
 continue 2
 expectPORTC 7
@@ -54,7 +54,7 @@ expect state WAIT2
 checkResult
 
 test "PINA: 0x00, 0x00 => PORTC: 0, state = RESET"
-set state = START
+set state = INIT
 setPINA 0xFF
 continue 2
 setPINA 0xFF
@@ -64,7 +64,7 @@ expect state INIT
 checkResult
 
 test "PINA: 0x00, 001 => PORTC: 1, state = INCREMENT"
-set state = START
+set state = INIT
 setPINA 0xFF
 continue 2
 setPINA 0xFE
