@@ -22,7 +22,6 @@ int main(void) {
 	state = INIT;
 	unsigned char C = 0x00;
 	unsigned char A1 = 0x00;
-	
 	while (1) {
 		A1 = PINA & 0x01;
 		switch(state){
@@ -61,35 +60,37 @@ int main(void) {
 					state = WAIT;
 				}
 				break;
+			case RELEASE:
+				if(A1){
+					state = RELEASE;
+				}
+				else if(!A1){
+					state = WAIT;
+				}
 			case LIGHT1:
-				A1 ? LIGHT1 : WAIT;	
+				state = RELEASE;
 				break;
 			case LIGHT2:
-				A1 ? LIGHT2 : WAIT;
+				state = RELEASE;
 				break;
 			case LIGHT3:
-				A1 ? LIGHT3 : WAIT;
+				state = RELEASE;
 				break;
 			case LIGHT4:
-				A1 ? LIGHT4 : WAIT;
+				state = RELEASE;
 				break;
 			case LIGHT5:
-				A1 ? LIGHT5 : WAIT;
+				state = RELEASE;
 				break;
 			case LIGHT6:
-				A1 ? LIGHT6 : WAIT;
+				state = RELEASE;
 				break;
 			case LIGHT135:
-				A1 ? LIGHT135 : WAIT;
+				state = RELEASE;
 				break;
 			case LIGHT246:
-				A1 ? LIGHT246 : WAIT;
+				state = RELEASE;
 				break;
-			
-				
-			
-			
-			
 		}
 		switch(state){
 			case INIT:
