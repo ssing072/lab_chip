@@ -13,7 +13,6 @@ int main(void) {
 	
 	while(1){
 		tempA = ~PINA;
-		C = 0x00;
 		if(tempA == 0x01 || tempA == 0x02){
 			C = 0x60;
 		}
