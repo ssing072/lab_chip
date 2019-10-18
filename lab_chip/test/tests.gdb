@@ -35,7 +35,7 @@ continue 2
 setPINA 0x00
 continue 2
 expectPORTC 1
-expect state WAIT
+expect state RELEASE
 checkResult
 
 # Report on how many tests passed/tests ran
