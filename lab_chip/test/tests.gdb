@@ -28,68 +28,7 @@ echo Running all tests..."\n\n
 
 # Add tests below
 
-test "INCREASE ONCE: PINA: 0x01, 0x00 => PORTC: 8, state = WAIT"
-set state = INIT
-setPINA 0x01
-continue 2
-setPINA 0x00
-continue 2
-expectPORTC 8
-expect state WAIT
-checkResult
-
-
-test "INCREASE 3 more times: PINA: 0x01, 0x00, 0x01, 0x00, 0x01, 0x00 => PORTC: 9, state = WAIT"
-set state = INIT
-setPINA 0x01
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x01
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x01
-continue 2
-setPINA 0x00
-continue 2
-expectPORTC 9
-expect state WAIT
-checkResult
-
-test "Decrease once: PINA: 0x02, 0x00 => PORTC: 8, state = WAIT"
-set state = INIT
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-expectPORTC 8
-expect state WAIT
-checkResult
-
-test "RESET to 0: PINA: 0x01, 0x02, 0x00 => PORTC: 0, state = WAIT"
-set state = INIT
-setPINA 0x01
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-expectPORTC 0
-expect state WAIT
-checkResult
-
-test "DECREASE at 0: PINA: 0x02, 0x00 => PORTC: 0, state = WAIT"
-set state = INIT
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-expectPORTC 0
-expect state WAIT
-checkResult
-
-test "INCREASE at 0: PINA: 0x01, 0x00 => PORTC: 1, state = WAIT"
+test "PINA: 0x01, 0x00 => PORTC: 0x01, state = WAIT"
 set state = INIT
 setPINA 0x01
 continue 2
