@@ -28,31 +28,43 @@ echo Running all tests..."\n\n
 
 # Add tests below
 
-test "PINA: 0x01 => PORTC: 8, state = WAITRELEASE"
+test "PINA: 0x01, 0x00 => PORTC: 8, state = WAIT"
 set state = INIT
 setPINA 0x01
 continue 2
 setPINA 0x00
 continue 2
 expectPORTC 8
-expect state WAITRELEASE
-checkResult
-
-
-test "PINA: 0x00 => PORTC: 0, state = WAIT"
-set state = INIT
-setPINA 0xFF
-continue 2
-expectPORTC 7
 expect state WAIT
 checkResult
 
-test "PINA: 0x02 => PORTC: 7, state = WAITRELEASE"
+
+test "PINA: 0x01, 0x00, 0x01, 0x00, 0x01, 0x00 => PORTC: 9, state = WAIT"
 set state = INIT
-setPINA 0xFD
+setPINA 0x01
 continue 2
-expectPORTC 7
-expect state WAITRELEASE2
+setPINA 0x00
+continue 2
+setPINA 0x01
+continue 2
+setPINA 0x00
+continue 2
+setPINA 0x01
+continue 2
+setPINA 0x00
+continue 2
+expectPORTC 9
+expect state WAIT
+checkResult
+
+test "PINA: 0x02, 0x00 => PORTC: 7, state = WAIT"
+set state = INIT
+setPINA 0x02
+continue 2
+setPINA 0x00
+continue 2
+expectPORTC 6
+expect state WAIT
 checkResult
 
 test "PINA: 0x00, 0x00 => PORTC: 0, state = RESET"
