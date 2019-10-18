@@ -62,28 +62,28 @@ int main(void) {
 				}
 				break;
 			case LIGHT1:
-				A1 ? LIGHT1 : WAIT	
+				A1 ? LIGHT1 : WAIT;	
 				break;
 			case LIGHT2:
-				A1 ? LIGHT2 : WAIT
+				A1 ? LIGHT2 : WAIT;
 				break;
 			case LIGHT3:
-				A1 ? LIGHT3 : WAIT
+				A1 ? LIGHT3 : WAIT;
 				break;
 			case LIGHT4:
-				A1 ? LIGHT4 : WAIT
+				A1 ? LIGHT4 : WAIT;
 				break;
 			case LIGHT5:
-				A1 ? LIGHT5 : WAIT
+				A1 ? LIGHT5 : WAIT;
 				break;
 			case LIGHT6:
-				A1 ? LIGHT6 : WAIT
+				A1 ? LIGHT6 : WAIT;
 				break;
 			case LIGHT135:
-				A1 ? LIGHT135 : WAIT
+				A1 ? LIGHT135 : WAIT;
 				break;
 			case LIGHT246:
-				A1 ? LIGHT246 : WAIT
+				A1 ? LIGHT246 : WAIT;
 				break;
 			
 				
