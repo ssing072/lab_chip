@@ -13,7 +13,7 @@ int main(void) {
 	unsigned char tempOut = 0x00;
 	tempOut = 7;
 	unsigned char A0 = 0x00;
-	unsigned char A1 = 0x00
+	unsigned char A1 = 0x00;
 	
 	/* Insert your solution below */
 	while (1) {
