@@ -1,25 +1,7 @@
-Breakpoint 1 at 0xfe: file source/main.c, line 19.
+Breakpoint 1 at 0x11c: file source/main.c, line 25.
 Note: automatically using hardware breakpoints for read-only addresses.
 ======================================================
 Running all tests..."
 
-"INCREASE ONCE: PINA: 0x01, 0x00 => PORTC: 8, state = WAIT"...
-	Expected 8 
-	PORTC '0x800028:	0x00
-
-	Expected WAIT but got state:4"INCREASE 3 more times: PINA: 0x01, 0x00, 0x01, 0x00, 0x01, 0x00 => PORTC: 9, state = WAIT"...
-	Expected 9 
-	PORTC '0x800028:	0x00
-
-	Expected WAIT but got state:4"Decrease once: PINA: 0x02, 0x00 => PORTC: 8, state = WAIT"...
-	Expected 8 
-	PORTC '0x800028:	0x00
-
-	Expected WAIT but got state:4"RESET to 0: PINA: 0x01, 0x02, 0x00 => PORTC: 0, state = WAIT"...
-	Expected WAIT but got state:4"DECREASE at 0: PINA: 0x02, 0x00 => PORTC: 0, state = WAIT"...
-	Expected WAIT but got state:4"INCREASE at 0: PINA: 0x01, 0x00 => PORTC: 1, state = WAIT"...
-	Expected 1 
-	PORTC '0x800028:	0x00
-
-	Expected WAIT but got state:4======================================================
+"PINA: 0x01, 0x00 => PORTC: 0x01, state = WAIT"..."PINA: 0x01, 0x00 => PORTC: 0x02, state = WAIT"..."PINA: 0x01, 0x00 => PORTC: 0x04, state = WAIT"..."PINA: 0x01, 0x00 => PORTC: 0x08, state = WAIT"..."PINA: 0x01, 0x00 => PORTC: 0x10, state = WAIT"..."PINA: 0x01, 0x00 => PORTC: 0x20, state = WAIT"..."PINA: 0x01, 0x00 => PORTC: 0x15, state = WAIT"..."PINA: 0x01, 0x00 => PORTC: 0x2A, state = WAIT"..."PINA: 0x01, 0x00 => PORTC: 0x00, state = WAIT"..."PINA: 0x01, 0x00 => PORTC: 0x01, state = WAIT"...======================================================
 Quitting: Remote doesn't know how to detach
